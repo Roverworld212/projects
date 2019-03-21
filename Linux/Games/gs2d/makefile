@@ -1,4 +1,4 @@
-#### Note: You must have compiled the engine.
+#### Note: You must have compiled the engines2d
 #### To do so, go to the directory above, through console,
 #### and type make.
 
