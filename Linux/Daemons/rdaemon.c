@@ -10,6 +10,8 @@
 /*Daemon output id
 //[i]=Info
 //[e]=Error
+//[p]=Proccess
+//[c]=Critical Error
 */
 //PublicDaemonVars
 char rsl[] = "";//Enter dir to create log at w/.txt at the end
