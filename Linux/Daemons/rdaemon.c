@@ -16,6 +16,7 @@
 //PublicDaemonVars
 char rsl[] = "";//Enter dir to create log at w/.txt at the end
 char dwd[]= "";//Working directory for the daemon
+int errors = 0;
 //MainFunc
 int main(void){
 pid_t pid, sid;
@@ -61,5 +62,6 @@ fprintf(fp, "[i]Task_end\n");//Runs at the end of process
 fclose(fp);
 sleep(30); /* wait 30 seconds */
 }
+fprint(fp, "[i]Daemon ended with %s errors", errors);
 exit(EXIT_SUCCESS);
 }
