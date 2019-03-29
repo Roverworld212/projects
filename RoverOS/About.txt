@@ -1,0 +1,11 @@
+This is my custom kernel using C,Assembly and someone elses code
+This kernel can
+1.Boot
+2.Print text
+Yep thats it for now
+This might get updated, or not
+This kernel if I add more will have
+1.Text
+2.User input
+3.No GUI just text
+4.Some security(Maybe)
