@@ -1,2 +1,3 @@
 To run this use QEMU and load from the iso file
 You can use the included script to build the iso file from source
+To use the script cd into this directory and then run the script
