@@ -9,3 +9,5 @@ This kernel if I add more will have
 2.User input
 3.No GUI just text
 4.Some security(Maybe)
+Extra info:
+This took exactly 2 hours of almost doing nothing to make
