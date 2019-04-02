@@ -1,3 +1,4 @@
+cd <Path_to_RoverOS_folder>
 echo "Building boot.asm";
 nasm -f -aout -o ./kernel/boot.asm ./OSR/boot.o;
 echo "Building kernel";
