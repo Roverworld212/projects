@@ -11,7 +11,7 @@ public class BC : Monobehavior {
   void Start(){
   }
 
-  void WasHit(){//Call from a different C# script when hit with a bullet after dealing damage
+  void WasHit(){//Call from a different C# script when hit and after dealing damage
     deathCheck();
   }
   
