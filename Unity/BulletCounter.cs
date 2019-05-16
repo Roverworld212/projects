@@ -1,6 +1,4 @@
 /*
-Insert bullet counter for unity
-Maybe when i get home... maybe
 I a making this mainly to keep myself coding even when at school in classes that to me are pointless. I plan to make more scripts
 for anyone to use and modify. If you have any suggestion on improving this (there is surely something better than this) please
 share it with me!
