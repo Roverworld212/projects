@@ -6,7 +6,7 @@ public class BC : Monobehavior {
   //Vars
   private int hitPoints = 100;//CurrentHP
   private int maxHP = 100;//Max HP allowed
-  private int deathNum = 0;//Customize the death limit
+  private int deathNum = 0;//Customize the HP required to die
   
   void Start(){
   }
