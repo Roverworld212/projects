@@ -7,4 +7,12 @@ public class ItemHolder : MonoBehaviour
 //Vars
 private int oco[10];//Objects currently owned
 
+void AddItem(int an,int wta){
+if(wta <= 9){
+oco[wta] = an;
+}
+else{
+Debug.Log(“Failed to add”);
+}
+}
 }
