@@ -9,17 +9,8 @@ public class HPCounter : MonoBehaviour
     private int maxHP = 100;//Max HP allowed
     private int deathNum = 0;//Customize the HP required to die
 
-    void Start()
-    {
-    }
-
-    void WasHit()
-    {//Call from a different C# script when hit and after dealing damage
-        DeathCheck();
-    }
-
     void DeathCheck()
-    {
+    {//Call from a different C# script when hit and after dealing damage
         if (hitPoints <= deathNum)
         {
             //DIE
