@@ -1,50 +1,61 @@
-//blah blah blah unity using tags go here
-//My spaces may cause the code to fail btw
-//My spacebar is broken
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class BC : Monobehavior {
-  //Vars
-  private int hitPoints = 100;//CurrentHP
-  private int maxHP = 100;//Max HP allowed
-  private int deathNum = 0;//Customize the HP required to die
-  
-  void Start(){
-  }
+public class HPCounter : MonoBehaviour
+{
+    //Vars
+    private int hitPoints = 100;//CurrentHP
+    private int maxHP = 100;//Max HP allowed
+    private int deathNum = 0;//Customize the HP required to die
 
-  void WasHit(){//Call from a different C# script when hit and after dealing damage
-    deathCheck();
-  }
-  
-  void deathCheck(){
-    if(hitPoints <= deathNum){
-      //DIE
+    void Start()
+    {
     }
-  }
 
-  void takeDamage(int dmg){
-    deathCheck();
-    if(hitPoints < dmg){
-      hitPoints = 0;
+    void WasHit()
+    {//Call from a different C# script when hit and after dealing damage
+        DeathCheck();
     }
-    else{
-      hitPoints = hitPoints - dmg
+
+    void DeathCheck()
+    {
+        if (hitPoints <= deathNum)
+        {
+            //DIE
+        }
     }
-    deathCheck();
-  }
-  
-  void takeHealth(int hp){
-    deathCheck();
-    int atc = hitPoints + hp;//This may be unnecessary to do
-    if(atc > maxHP){
-      hitPoints = maxHP;
+
+    void TakeDamage(int dmg)
+    {
+        DeathCheck();
+        if (hitPoints < dmg)
+        {
+            hitPoints = 0;
+        }
+        else
+        {
+            hitPoints = hitPoints - dmg;
+        }
+        DeathCheck();
     }
-    else{
-      hitPoints = hitPoints + hp;
+
+    void TakeHealth(int hp)
+    {
+        DeathCheck();
+        int atc = hitPoints + hp;//This may be unnecessary to do
+        if (atc > maxHP)
+        {
+            hitPoints = maxHP;
+        }
+        else
+        {
+            hitPoints = hitPoints + hp;
+        }
     }
-  }
-  
-  void printOutHP(){
-    Debug.Log(hitPoints);
-  }
-  
+
+    void PrintOutHP()
+    {
+        Debug.Log(hitPoints);
+    }
 }
