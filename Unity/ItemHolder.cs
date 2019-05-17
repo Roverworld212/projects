@@ -15,4 +15,13 @@ else{
 Debug.Log(“Failed to add”);
 }
 }
+
+void RemoveItem(int wtr, int rn){
+if(wtr <= 9){
+
+}
+else{
+Debug.Log("Failed to remove");
+}
+}
 }
