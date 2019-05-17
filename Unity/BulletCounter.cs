@@ -35,7 +35,7 @@ public class BulletCounter : MonoBehaviour
                 --bic;
             }
         }
-        void reload()
+        void Reload()
         {
             if (bis < mbic)
             {
