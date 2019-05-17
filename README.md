@@ -12,7 +12,7 @@ Im not working on that monster of stolen code and my code ever again.
 #
 # Q: Should I use this code?
 # A: Maybe
-Unity: Yes, RoverOS: No, Linux: No (unless its g2sd or whatever it was called then Yes)
+Unity: Yes, RoverOS: No, Linux: No (unless its gs2d then Yes)
 #
 # Yes I know the kernel build script isn’t finished 
 I will finish that at some point... maybe
