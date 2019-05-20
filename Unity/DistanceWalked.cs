@@ -5,7 +5,7 @@ using UnityEngine;
 //Typing this on a restricted school computer doesn't let me test it
 public class DistanceWalked : MonoBehaviour
 {
-float time = 0f;
+float timer = 0f;
 float distanceWalked = 0f;
 
 void Update(){
