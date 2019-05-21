@@ -14,6 +14,7 @@ timer += Time.deltaTime;
 int seconds = timer % 60;
 }
 Calculate(seconds);//Calculate the distance walked
+timer = 0f;
 }
 
 void Calculate(int s){
