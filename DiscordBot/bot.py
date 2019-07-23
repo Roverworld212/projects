@@ -4,7 +4,6 @@
 #Three simple templates are already made and this code could (and should) be optimized (probably)
 import discord
 import sqlite3
-import json
 import random
 from discord.ext import commands
 
