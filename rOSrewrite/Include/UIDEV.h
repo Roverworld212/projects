@@ -33,8 +33,6 @@ enum vga_color {
 };
 
 #endif
-
-int arraylimit = 200;
 //index for video buffer array
 uint32 vga_index;
 //counter to store new lines
