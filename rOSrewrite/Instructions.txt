@@ -1,0 +1,2 @@
+use run.sh to compile and run the iso file in qemu using the command "qemu-system-x86_64 -cdrom rOS.iso"
+using "sudo apt install qemu-system-x86_64" to install qemu first, or run it in VirtualBox
