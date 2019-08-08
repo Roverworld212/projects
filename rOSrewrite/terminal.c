@@ -1,4 +1,4 @@
-char cmd[arraylimit];
+char cmd[200];
 
 int terminal() {
 	pstring("Terminal Loaded", 1);
@@ -19,9 +19,10 @@ int terminal() {
 int getcmd() {
 	//Get keycode inputs and stores them
 	char ch[1];
+	char keycode = 0;
 	int i = 0;
 	do {
-		ch = get_ascii_char(keycode);
+		ch[1] = get_ascii_char(keycode);
 		cmd[i] = ch[1];
 		++i;
 		sleept(2);
