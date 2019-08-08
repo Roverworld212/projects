@@ -31,14 +31,4 @@ int getcmd() {
 
 int interpretcmd(char *str) {
 	//Reads string and runs appropriate command
-	switch (cmd)
-	{
-	case "help":
-		return 0;
-	case "halt_kernel":
-		return 0;
-	default:
-		pstring("Command invalid", 1);
-		break;
-	}
 }
