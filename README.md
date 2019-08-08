@@ -5,10 +5,9 @@
 Most the code I do on here isn’t checked that well
 (in the case of Unity that is)
 
-# Q: Will RoverOS be updated?
-# A: Probably not
-I opened the assembly file and tried to fix it once.
-Im not working on that monster of stolen code ever again.
+# Q: Is rOSrewrite good?
+# A: No
+It's still very buggy and not even close to what I want it to be
 
 # Q: Should I use this code?
 # A: Maybe
