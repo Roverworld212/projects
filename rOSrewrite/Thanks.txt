@@ -1,0 +1,5 @@
+Thanks to:
+http://www.osdever.net/bkerndev/Docs/title.html
+and
+https://www.codeproject.com/Articles/1225196/Create-Your-Own-Kernel-In-C-2
+for most of the code and helping me start my journey into kernel development(hell)!
