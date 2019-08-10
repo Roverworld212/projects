@@ -1,35 +1,37 @@
 char cmd[200];
 
-int terminal() {
-	pstring("Terminal Loaded", 1);
-	do {
-		pstring(">", 1);
-		if (getcmd() == 1) {
-			return 1;
+int terminal() {//rewriting this function because honestly im not even sure
+	sleept();
+	char kcode;
+	char ch[0];
+	int i = 0;
+
+	while (1 == 1) {
+		kcode = kin();
+		if (kin == KEY_ENTER) {
+			process_cmd();
 		}
 		else {
-			if (interpretcmd(cmd) == 1) {
-				return 1;
-			}
+			ch[0] = gac(kcode);
+			cmd[i] = ch[0];
+			pchar(cmd[i]);
+			i++;
+			sleept();
 		}
-	} while (1 == 1);
+		
+	}
 	return 1;
 }
 
-int getcmd() {
-	//Get keycode inputs and stores them
-	char ch[1];
-	char keycode = 0;
-	int i = 0;
-	do {
-		ch[1] = get_ascii_char(keycode);
-		cmd[i] = ch[1];
-		++i;
-		sleept(2);
-	} while (keycode != KEY_ENTER);
-	return 0;
+void process_cmd() {
+	if (STRCMP(cmd, "HALTKERN") == 0) {
+		haltkern();
+	}
+	else {
+		pstring("Invalid command: ", 0);
+		pstring(cmd, 1);
+		pstring(">", 0);
+	}
+	sleept();
 }
 
-int interpretcmd(char *str) {
-	//Reads string and runs appropriate command
-}

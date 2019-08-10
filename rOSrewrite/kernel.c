@@ -3,11 +3,16 @@
 #include "KERNUTILS.h"
 #include "terminal.c"
 
-void termstart() {
+int termstart() {
+	pstring("Terminal loaded", 1);
+	pstring(">", 0);
 	while (1 == 1) {
 		int i = terminal();
 		if (i == 1) {
-			return;
+			return 1;
+		}
+		else {
+			i = terminal();
 		}
 	}
 }
@@ -16,8 +21,7 @@ void kernel_main() {
 	init_vga(WHITE, BLACK);
 	pstring("VGA Initialized", 1);
 	tkbd();
-	int *NFIPT = &termstart;
 	pstring("Loading Terminal", 1);
-	termstart();
-	kern_panic("TERMINAL RETURNED", NFIPT);
+	int i = termstart();
+	kern_panic("TERMINAL RETURNED", i, __FUNCTION__);
 }
