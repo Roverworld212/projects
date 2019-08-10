@@ -86,72 +86,9 @@
 
 #endif
 
-uint8 inb(uint16 port)
-{
-	uint8 ret;
-	asm volatile("inb %1, %0" : "=a"(ret) : "d"(port));
-	return ret;
-}
+typedef enum {false, true} bool;
 
-void outb(uint16 port, uint8 data)
-{
-	asm volatile("outb %0, %1" : "=a"(data) : "d"(port));
-}
-
-char get_input_keycode()
-{
-	char ch = 0;
-	while ((ch = inb(KEYBOARD_PORT)) != 0) {
-		if (ch > 0)
-			return ch;
-	}
-	return ch;
-}
-
-/*
-keep the cpu busy for doing nothing(nop)
-so that io port will not be processed by cpu
-here timer can also be used, but lets do this in looping counter
-*/
-void wait_for_io(uint32 timer_count)
-{
-	while (1) {
-		asm volatile("nop");
-		timer_count--;
-		if (timer_count <= 0)
-			break;
-	}
-}
-
-void sleep(uint32 timer_count)
-{
-	wait_for_io(timer_count);
-}
-
-void sleept(int ttw) {//Makes the code wait while this function takes time to do some math
-	//This is my own version of the sleep command
-	int i;
-	while (i <= ttw) {
-		do {
-			int a = 1 + ttw * ttw;
-		} while (1 == 2);
-		i++;
-	}
-
-}
-
-void tkbd() {
-	char ch = get_input_keycode();
-	if (ch > 0) {
-		pstring("Keyboard OK", 1);
-	}
-	else {
-		int *NPTR = 0x0;
-		kern_panic("KEYBOARD FAILED", NPTR);
-	}
-}
-
-char get_ascii_char(uint8 key_code)
+char gac(uint8 key_code)
 {
 	switch (key_code) {
 	case KEY_A: return 'A';
@@ -201,5 +138,73 @@ char get_ascii_char(uint8 key_code)
 	case KEY_FORESLHASH: return '/';
 	case KEY_SPACE: return ' ';
 	default: return 0;
+	}
+}
+
+uint8 inb(uint16 port)
+{
+	uint8 ret;
+	asm volatile("inb %1, %0" : "=a"(ret) : "d"(port));
+	return ret;
+}
+
+void outb(uint16 port, uint8 data)
+{
+	asm volatile("outb %0, %1" : "=a"(data) : "d"(port));
+}
+
+char kin()
+{
+	char ch = 0;
+	while ((ch = inb(KEYBOARD_PORT)) != 0) {
+		if (ch > 0) {
+			return ch;
+		}
+	}
+	return ch;
+}
+
+/*
+keep the cpu busy for doing nothing(nop)
+so that io port will not be processed by cpu
+here timer can also be used, but lets do this in looping counter
+*/
+void wait_for_io(uint32 timer_count)
+{
+	while (1) {
+		asm volatile("nop");
+		timer_count--;
+		if (timer_count <= 0)
+			break;
+	}
+}
+
+void sleep(uint32 timer_count)
+{
+	wait_for_io(timer_count);
+}
+
+void sleept() {//Yes you are seeing this correctly
+	//idk how sleep() works but spamming it stops key duplication so...
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+}
+
+void tkbd() {
+	char ch = kin();
+	if (ch > 0) {
+		pstring("Keyboard OK", 1);
+	}
+	else {
+		int *NPTR = 0x0;
+		kern_panic("KEYBOARD FAILED", NPTR);
 	}
 }

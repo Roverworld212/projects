@@ -89,7 +89,7 @@ void init_vga(uint8 fore_color, uint8 back_color)
 /*
 increase vga_index by width of row(80)
 */
-void print_new_line()
+void pline()
 {
 	if (next_line_index >= 55) {
 		next_line_index = 0;
@@ -114,16 +114,18 @@ void pchar(char ch)
 uint32 strlen(const char* str)
 {
 	uint32 length = 0;
-	while (str[length])
+	while (str[length]) {
 		length++;
+	}
 	return length;
 }
 
 uint32 digit_count(int num)
 {
 	uint32 count = 0;
-	if (num == 0)
+	if (num == 0) {
 		return 1;
+	}
 	while (num > 0) {
 		count++;
 		num = num / 10;
@@ -160,8 +162,23 @@ void pstring(char *str,int nl)
 		index++;
 	}
 	if (nl == 1) {
-		print_new_line();
+		pline();
 	}
+}
+
+int STRCMP(const char *p1, const char *p2)
+{
+	const unsigned char *s1 = (const unsigned char *)p1;
+	const unsigned char *s2 = (const unsigned char *)p2;
+	unsigned char c1, c2;
+	do
+	{
+		c1 = (unsigned char)*s1++;
+		c2 = (unsigned char)*s2++;
+		if (c1 == '\0')
+			return c1 - c2;
+	} while (c1 == c2);
+	return c1 - c2;
 }
 
 //print int by converting it into string
