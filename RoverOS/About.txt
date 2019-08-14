@@ -1,3 +1,4 @@
+This version of rOS is dead, look at rOSrewrite it actually has keyboard input and other stuff this one doesn't.
 This is my custom kernel using C,Assembly and someone elses code
 This kernel can
 1.Boot
