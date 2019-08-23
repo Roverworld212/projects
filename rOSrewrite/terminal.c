@@ -1,37 +1,23 @@
-char cmd[200];
+char icmd;
+char kcode;
 
 int terminal() {//rewriting this function because honestly im not even sure
-	sleept();
-	char kcode;
 	char ch[0];
 	int i = 0;
-
 	while (1 == 1) {
 		kcode = kin();
-		if (kin == KEY_ENTER) {
-			process_cmd();
-		}
-		else {
-			ch[0] = gac(kcode);
-			cmd[i] = ch[0];
-			pchar(cmd[i]);
-			i++;
+		if(kcode == KEY_ENTER){
+			sleept();
+			pline();
+			cmd_interpreter();
 			sleept();
 		}
-		
-	}
-	return 1;
-}
-
-void process_cmd() {
-	if (STRCMP(cmd, "HALTKERN") == 0) {
-		haltkern();
-	}
-	else {
-		pstring("Invalid command: ", 0);
-		pstring(cmd, 1);
-		pstring(">", 0);
+		else{
+			ch[0] = gac(kcode);
+			pchar(ch[0]);
+			sleept();
+		}
 	}
 	sleept();
+	return 1;
 }
-

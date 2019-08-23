@@ -87,36 +87,168 @@
 #endif
 
 typedef enum {false, true} bool;
-
+int kpressed = 0;
+int cmdnum = 0;
+int tnum = 0;
 char gac(uint8 key_code)
 {
 	switch (key_code) {
-	case KEY_A: return 'A';
-	case KEY_B: return 'B';
-	case KEY_C: return 'C';
-	case KEY_D: return 'D';
-	case KEY_E: return 'E';
-	case KEY_F: return 'F';
-	case KEY_G: return 'G';
-	case KEY_H: return 'H';
-	case KEY_I: return 'I';
-	case KEY_J: return 'J';
-	case KEY_K: return 'K';
-	case KEY_L: return 'L';
-	case KEY_M: return 'M';
-	case KEY_N: return 'N';
-	case KEY_O: return 'O';
-	case KEY_P: return 'P';
-	case KEY_Q: return 'Q';
-	case KEY_R: return 'R';
-	case KEY_S: return 'S';
-	case KEY_T: return 'T';
-	case KEY_U: return 'U';
-	case KEY_V: return 'V';
-	case KEY_W: return 'W';
-	case KEY_X: return 'X';
-	case KEY_Y: return 'Y';
-	case KEY_Z: return 'Z';
+		case KEY_A://Add 5
+    tnum = cmdnum + 5;
+    cmdnum = tnum;
+    kpressed++;
+		sleep(0x02FFFFFF);
+  	return 'A';
+  	case KEY_B://Add 10
+    tnum = cmdnum + 10;
+    cmdnum = tnum;
+    kpressed++;
+		sleep(0x02FFFFFF);
+    return 'B';
+  	case KEY_C://Add 15
+    tnum = cmdnum + 15;
+    cmdnum = tnum;
+    kpressed++;
+		sleep(0x02FFFFFF);
+    return 'C';
+  	case KEY_D://Add 20
+    tnum = cmdnum + 20;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'D';
+  	case KEY_E://Add 25
+    tnum = cmdnum + 25;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'E';
+  	case KEY_F://Add 30
+    tnum = cmdnum + 30;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'F';
+  	case KEY_G://Add 35
+    tnum = cmdnum + 35;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'G';
+  	case KEY_H://Add 40
+    tnum = cmdnum + 40;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'H';
+  	case KEY_I://Add 45
+    cmdnum = cmdnum + 45;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'I';
+  	case KEY_J://Add 50
+    cmdnum = cmdnum + 50;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'J';
+  	case KEY_K://Add 55
+    cmdnum = cmdnum + 55;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'K';
+  	case KEY_L://Add 60
+    cmdnum = cmdnum + 60;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'L';
+  	case KEY_M://Add 65
+    cmdnum = cmdnum + 65;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'M';
+  	case KEY_N://Add 70
+    cmdnum = cmdnum + 70;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'N';
+  	case KEY_O://Add 75
+    cmdnum = cmdnum + 75;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'O';
+  	case KEY_P://Add 80
+    cmdnum = cmdnum + 80;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'P';
+  	case KEY_Q://Add 85
+    cmdnum = cmdnum + 85;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'Q';
+  	case KEY_R://Add 90
+    cmdnum = cmdnum + 90;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'R';
+  	case KEY_S://Add 95
+    cmdnum = cmdnum + 95;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'S';
+  	case KEY_T://Add 100
+    cmdnum = cmdnum + 100;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'T';
+  	case KEY_U://Add 105
+    cmdnum = cmdnum + 105;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'U';
+  	case KEY_V://Add 110
+    cmdnum = cmdnum + 110;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'V';
+  	case KEY_W://Add 115
+    cmdnum = cmdnum + 115;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'W';
+  	case KEY_X://Add 120
+    cmdnum = cmdnum + 120;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'X';
+  	case KEY_Y://Add 125
+    cmdnum = cmdnum + 125;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'Y';
+  	case KEY_Z://Add 130
+    cmdnum = cmdnum + 130;
+    cmdnum = tnum;
+		kpressed++;
+		sleep(0x02FFFFFF);
+		return 'Z';
 	case KEY_1: return '1';
 	case KEY_2: return '2';
 	case KEY_3: return '3';
@@ -177,11 +309,6 @@ void wait_for_io(uint32 timer_count)
 		if (timer_count <= 0)
 			break;
 	}
-}
-
-void sleep(uint32 timer_count)
-{
-	wait_for_io(timer_count);
 }
 
 void sleept() {//Yes you are seeing this correctly
