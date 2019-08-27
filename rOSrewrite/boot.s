@@ -16,7 +16,8 @@ stackTop:
 
 _start:
 	mov $stackTop, %esp
-	call kernel_main
+	call kernel_main #Main kernel
+	call tdaemon #Test daemon
 
 	cli
 

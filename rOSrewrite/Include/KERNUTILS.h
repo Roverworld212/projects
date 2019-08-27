@@ -1,5 +1,6 @@
 /*
 The utilites for the kernel and other OS programs
+Required .h Files: (UIDEV.h)
 */
 
 #define KERN_SUCCESS 1
@@ -21,6 +22,11 @@ void kern_panic(char *str, int *rn,char *lcaller) {
 	while (1 == 1) {
 	}
 }
+
+void reboot(){//Re-launch the kernel
+
+}
+
 void haltkern() {
 	pstring("Halting Kernel", 1);
 	pstring("This will require a reboot!", 1);

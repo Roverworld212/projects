@@ -2,8 +2,9 @@ cd /media/sf_rKern/rOSrewrite
 as --32 ./boot.s -o ./COMPF/boot.o
 
 gcc -w -m32 -c ./kernel.c -o ./COMPF/kernel.o -I./Include -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+gcc -w -m32 -c ./tdaemon.c -o ./COMPF/td.o -I./Include -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
-ld -m elf_i386 -T linker.ld ./COMPF/kernel.o ./COMPF/boot.o -o ./rOS.bin -nostdlib
+ld -m elf_i386 -T linker.ld ./COMPF/kernel.o ./COMPF/boot.o ./COMPF/td.o -o ./rOS.bin -nostdlib
 
 grub-file --is-x86-multiboot rOS.bin
 

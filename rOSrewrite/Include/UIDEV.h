@@ -1,3 +1,8 @@
+/*
+Required .h file for char printing
+Required .h Files: None!
+**WARNING* File requires Boot.s to work!*
+*/
 #ifndef UIDEV_H
 #define UIDEV_H
 
@@ -99,15 +104,11 @@ void pline()
 	next_line_index++;
 }
 
-int hpts = 1;
-
 //assign ascii character to video buffer
 void pchar(char ch)
 {
-	hpts = 0;
 	vga_buffer[vga_index] = vga_entry(ch, g_fore_color, g_back_color);
 	vga_index++;
-	hpts = 1;
 }
 
 //print string by calling print_char

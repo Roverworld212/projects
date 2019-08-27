@@ -1,3 +1,9 @@
+/*
+General purpose functions for user-end programs
+Required .h Files: None
+**WARNING* Boot.s file Required for the sleep() program!*
+*/
+
 char *strcat(char *dest, const char *src)
 {
     int i,j;
@@ -12,6 +18,16 @@ char *strcat(char *dest, const char *src)
 void sleep(uint32 timer_count)
 {
 	wait_for_io(timer_count);
+}
+
+int ruses = 0;
+
+int rand(int i,int b){//Simple implementation of Rand() function
+  ruses++;
+  int o;
+  o = i * 10 *b;
+  o = o * i + ruses;
+  return o;
 }
 
 int strcmp(const char* s1, const char* s2)
@@ -48,26 +64,4 @@ void itoa(int num, char *number)
 		}
 		number[dgcount] = '\0';
 	}
-}
-
-void cmd_interpreter(){
-  int a = 0;
-switch (cmdnum) {
-  case 445://HALTKERN
-  haltkern();
-  case 270://KPANIC
-  kern_panic("COMMAND", 0, __FUNCTION__);
-  case 220://CLEAR
-  while(a != 11){
-  pline();
-  a++;
-  }
-  default:
-  dkvar(__FUNCTION__);
-  pstring("BAD CMD", 1);
-  pstring(">", 0);
-  cmdnum = 0;
-  kpressed = 0;
-  return;
-}
 }

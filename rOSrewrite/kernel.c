@@ -1,7 +1,9 @@
 #include "UIDEV.h"
 #include "IO.h"
+#include "UTILS.h"
 #include "KERNUTILS.h"
 #include "terminal.c"
+#include "MTUTILS.h"
 
 int termstart() {
 	pstring("Terminal loaded", 1);
@@ -18,6 +20,7 @@ int termstart() {
 }
 
 void kernel_main() {
+	apid[0] = 0;//Kernel has PID 0
 	init_vga(WHITE, BLACK);
 	pstring("VGA Initialized", 1);
 	tkbd();

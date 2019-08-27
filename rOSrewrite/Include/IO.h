@@ -1,3 +1,8 @@
+/*
+Required .h file for keyboard inputs
+Required .h Files: (UIDEV.h UTILS.h)
+**WARNING* This file requires Boot.s to work properly!*
+*/
 #ifndef IO_H
 #define IO_H
 
@@ -71,7 +76,7 @@
 #define KEY_INSERT 0x52
 #define KEY_KEYPAD_5 0x4C
 #define KEY_KEYPAD_MUL 0x37
-#define KEY_KEYPAD_Minus 0x4A
+#define KEY_KEYPAD_MINUS 0x4A
 #define KEY_KEYPAD_PLUS 0x4E
 #define KEY_KEYPAD_DIV 0x35
 #define KEY_LEFT 0x4B
@@ -87,167 +92,143 @@
 #endif
 
 typedef enum {false, true} bool;
+
 int kpressed = 0;
 int cmdnum = 0;
 int tnum = 0;
+
 char gac(uint8 key_code)
 {
 	switch (key_code) {
 		case KEY_A://Add 5
-    tnum = cmdnum + 5;
-    cmdnum = tnum;
+    ccn(5);
     kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
   	return 'A';
   	case KEY_B://Add 10
-    tnum = cmdnum + 10;
-    cmdnum = tnum;
+    ccn(10);
     kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
     return 'B';
   	case KEY_C://Add 15
-    tnum = cmdnum + 15;
-    cmdnum = tnum;
+    ccn(15);
     kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
     return 'C';
   	case KEY_D://Add 20
-    tnum = cmdnum + 20;
-    cmdnum = tnum;
+    ccn(20);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'D';
   	case KEY_E://Add 25
-    tnum = cmdnum + 25;
-    cmdnum = tnum;
+    ccn(25);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'E';
   	case KEY_F://Add 30
-    tnum = cmdnum + 30;
-    cmdnum = tnum;
+    ccn(30);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'F';
   	case KEY_G://Add 35
-    tnum = cmdnum + 35;
-    cmdnum = tnum;
+    ccn(35);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'G';
   	case KEY_H://Add 40
-    tnum = cmdnum + 40;
-    cmdnum = tnum;
+    ccn(40);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'H';
   	case KEY_I://Add 45
-    cmdnum = cmdnum + 45;
-    cmdnum = tnum;
+    ccn(45);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'I';
   	case KEY_J://Add 50
-    cmdnum = cmdnum + 50;
-    cmdnum = tnum;
+    ccn(50);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'J';
   	case KEY_K://Add 55
-    cmdnum = cmdnum + 55;
-    cmdnum = tnum;
+    ccn(55);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'K';
   	case KEY_L://Add 60
-    cmdnum = cmdnum + 60;
-    cmdnum = tnum;
+    ccn(60);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'L';
   	case KEY_M://Add 65
-    cmdnum = cmdnum + 65;
-    cmdnum = tnum;
+    ccn(65);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'M';
   	case KEY_N://Add 70
-    cmdnum = cmdnum + 70;
-    cmdnum = tnum;
+    ccn(70);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'N';
   	case KEY_O://Add 75
-    cmdnum = cmdnum + 75;
-    cmdnum = tnum;
+    ccn(75);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'O';
   	case KEY_P://Add 80
-    cmdnum = cmdnum + 80;
-    cmdnum = tnum;
+    ccn(80);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'P';
   	case KEY_Q://Add 85
-    cmdnum = cmdnum + 85;
-    cmdnum = tnum;
+    ccn(85);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'Q';
   	case KEY_R://Add 90
-    cmdnum = cmdnum + 90;
-    cmdnum = tnum;
+    ccn(90);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'R';
   	case KEY_S://Add 95
-    cmdnum = cmdnum + 95;
-    cmdnum = tnum;
+    ccn(95);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'S';
   	case KEY_T://Add 100
-    cmdnum = cmdnum + 100;
-    cmdnum = tnum;
+    ccn(100);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'T';
   	case KEY_U://Add 105
-    cmdnum = cmdnum + 105;
-    cmdnum = tnum;
+    ccn(105);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'U';
   	case KEY_V://Add 110
-    cmdnum = cmdnum + 110;
-    cmdnum = tnum;
+    ccn(110);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'V';
   	case KEY_W://Add 115
-    cmdnum = cmdnum + 115;
-    cmdnum = tnum;
+    ccn(115);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'W';
   	case KEY_X://Add 120
-    cmdnum = cmdnum + 120;
-    cmdnum = tnum;
+    ccn(120);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'X';
   	case KEY_Y://Add 125
-    cmdnum = cmdnum + 125;
-    cmdnum = tnum;
+    ccn(125);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'Y';
   	case KEY_Z://Add 130
-    cmdnum = cmdnum + 130;
-    cmdnum = tnum;
+    ccn(130);
 		kpressed++;
-		sleep(0x02FFFFFF);
+		sleepk();
 		return 'Z';
 	case KEY_1: return '1';
 	case KEY_2: return '2';
@@ -271,6 +252,22 @@ char gac(uint8 key_code)
 	case KEY_SPACE: return ' ';
 	default: return 0;
 	}
+}
+
+void ccn(int nta){//Count cmdnum
+	cmdnum = cmdnum + nta;
+	//Debug Commands
+	pstring("(", 0);
+	pint(nta, 0);
+	pstring(")", 0);
+	sleep(0x02FFFFFF);
+}
+
+void sleepk(){
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
+	sleep(0x02FFFFFF);
 }
 
 uint8 inb(uint16 port)
