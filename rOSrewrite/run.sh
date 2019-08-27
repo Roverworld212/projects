@@ -1,4 +1,4 @@
-cd /media/sf_rKern/rOSrewrite
+cd <rOSrewrite file path goes here>
 as --32 ./boot.s -o ./COMPF/boot.o
 
 gcc -w -m32 -c ./kernel.c -o ./COMPF/kernel.o -I./Include -std=gnu99 -ffreestanding -O2 -Wall -Wextra
