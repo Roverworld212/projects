@@ -14,6 +14,7 @@ int terminal() {//rewriting this function because honestly im not even sure
 			sleept();
 		}
 		else{
+			kpressed++;
 			ch[0] = gac(kcode);
 			pchar(ch[0]);
 			sleept();
