@@ -6,3 +6,6 @@ for most of the code and helping me start my journey into kernel development(hel
 
 https://stackoverflow.com
 for answers to many of my issues
+
+http://www.brackeen.com/vga/
+for helping me learn how to use VGA better and prepare for mouse support/animations
