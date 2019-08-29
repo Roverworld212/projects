@@ -30,6 +30,7 @@ void kernel_main() {
 	pstring("USING KEYBOARD PORT: ", 0);
 	pstring(KEYBOARD_PORT, 1);
 	tkbd();
+	apid[1] = assign_pid();//PID for terminal
 	pstring("Loading Terminal", 1);
 	int i = termstart();
 	kern_panic("TERMINAL RETURNED", i, __FUNCTION__);
