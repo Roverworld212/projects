@@ -23,5 +23,6 @@ int assign_pid(){//Returns an avalible PID
 }
 
 int startd(){//Start a file to run in the background
-
+  int i = assign_pid();
+  //rest of daemonizing code goes here
 }
