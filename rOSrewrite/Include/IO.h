@@ -117,117 +117,94 @@ char gac(uint8 key_code)
     return 'C';
   	case KEY_D://Add 20
     ccn(20);
-		kpressed++;
 		sleepk();
 		return 'D';
   	case KEY_E://Add 25
     ccn(25);
-		kpressed++;
 		sleepk();
 		return 'E';
   	case KEY_F://Add 30
     ccn(30);
-		kpressed++;
 		sleepk();
 		return 'F';
   	case KEY_G://Add 35
     ccn(35);
-		kpressed++;
 		sleepk();
 		return 'G';
   	case KEY_H://Add 40
     ccn(40);
-		kpressed++;
 		sleepk();
 		return 'H';
   	case KEY_I://Add 45
     ccn(45);
-		kpressed++;
 		sleepk();
 		return 'I';
   	case KEY_J://Add 50
     ccn(50);
-		kpressed++;
 		sleepk();
 		return 'J';
   	case KEY_K://Add 55
     ccn(55);
-		kpressed++;
 		sleepk();
 		return 'K';
   	case KEY_L://Add 60
     ccn(60);
-		kpressed++;
 		sleepk();
 		return 'L';
   	case KEY_M://Add 65
     ccn(65);
-		kpressed++;
 		sleepk();
 		return 'M';
   	case KEY_N://Add 70
     ccn(70);
-		kpressed++;
 		sleepk();
 		return 'N';
   	case KEY_O://Add 75
     ccn(75);
-		kpressed++;
 		sleepk();
 		return 'O';
   	case KEY_P://Add 80
     ccn(80);
-		kpressed++;
 		sleepk();
 		return 'P';
   	case KEY_Q://Add 85
     ccn(85);
-		kpressed++;
 		sleepk();
 		return 'Q';
   	case KEY_R://Add 90
     ccn(90);
-		kpressed++;
 		sleepk();
 		return 'R';
   	case KEY_S://Add 95
     ccn(95);
-		kpressed++;
 		sleepk();
 		return 'S';
   	case KEY_T://Add 100
     ccn(100);
-		kpressed++;
 		sleepk();
 		return 'T';
   	case KEY_U://Add 105
     ccn(105);
-		kpressed++;
 		sleepk();
 		return 'U';
   	case KEY_V://Add 110
     ccn(110);
-		kpressed++;
 		sleepk();
 		return 'V';
   	case KEY_W://Add 115
     ccn(115);
-		kpressed++;
 		sleepk();
 		return 'W';
   	case KEY_X://Add 120
     ccn(120);
-		kpressed++;
 		sleepk();
 		return 'X';
   	case KEY_Y://Add 125
     ccn(125);
-		kpressed++;
 		sleepk();
 		return 'Y';
   	case KEY_Z://Add 130
     ccn(130);
-		kpressed++;
 		sleepk();
 		return 'Z';
 	case KEY_1: return '1';
@@ -328,7 +305,6 @@ void tkbd() {
 		pstring("Keyboard OK", 1);
 	}
 	else {
-		int *NPTR = 0x0;
-		kern_panic("KEYBOARD FAILED", NPTR);
+		kern_panic("KEYBOARD FAILED", 1, __FUNCTION__);
 	}
 }
