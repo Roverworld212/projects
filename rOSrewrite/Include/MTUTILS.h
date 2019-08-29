@@ -6,6 +6,7 @@ Required .h Files: (UTILS.h)
 #define PID int
 
 int apid[99];//100 max programs including the kernel
+int tname[99];//Used for identifying the task associated with the PID
 
 int assign_pid(){//Returns an avalible PID
   PID i = rand(10, 30);//Starts with rand number for PID
@@ -22,7 +23,7 @@ int assign_pid(){//Returns an avalible PID
   return i;
 }
 
-int startd(){//Start a file to run in the background
+int startd(char* str){//Start a file to run in the background
   int i = assign_pid();
   //rest of daemonizing code goes here
 }
