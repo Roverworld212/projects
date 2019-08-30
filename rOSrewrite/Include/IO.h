@@ -233,10 +233,11 @@ char gac(uint8 key_code)
 
 void ccn(int nta){//Count cmdnum
 	cmdnum = cmdnum + nta;
-	//Debug Commands
-	pstring("(", 0);
-	pint(nta, 0);
-	pstring(")", 0);
+	/*Debug Commands
+	//pstring("(", 0);
+	//pint(nta, 0);
+	//pstring(")", 0);
+	*/
 	sleep(0x02FFFFFF);
 }
 
