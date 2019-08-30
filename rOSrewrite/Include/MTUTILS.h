@@ -27,3 +27,7 @@ int startd(char* str){//Start a file to run in the background
   int i = assign_pid();
   //rest of daemonizing code goes here
 }
+
+int termproccess(PID task, char* tname){//Terminate a proccess
+  
+}
