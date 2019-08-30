@@ -12,5 +12,7 @@ It's still very buggy and not even close to what I want it to be
 # Q: Should I use this code?
 # A: Maybe
 Unity: Yes
+#
 rOSrewrite: Yes (Some code doesn't work properly and I will remove them later and/or update them)
+#
 Linux: No (unless its gs2d then Yes(which has nothing in it so go ahead))
