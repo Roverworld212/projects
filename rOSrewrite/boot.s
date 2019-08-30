@@ -20,7 +20,8 @@ _start:
 	call tdaemon #Test daemon
 
 	cli
-
+	
+#_launchd:
 
 # put system in infinite loop
 hltLoop:
