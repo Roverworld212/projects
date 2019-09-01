@@ -9,3 +9,6 @@ for answers to many of my issues
 
 http://www.brackeen.com/vga/
 for helping me learn how to use VGA better and prepare for mouse support/animations
+
+https://github.com/cfenollosa/os-tutorial
+for more code that is used in my OS
