@@ -1,1 +1,0 @@
-//Daemon to log errors
