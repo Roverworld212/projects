@@ -6,6 +6,7 @@
 void setup(){//Setup all important funcs at boot
   init_vga(WHITE, BLUE);
   gdt_install();
+  pstring("Starting up multitasking", 1);
 }
 
 void stp(){
@@ -14,6 +15,19 @@ void stp(){
 	sleep(0x02FFFFFF);
 	sleep(0x02FFFFFF);
 }
+
+/*Just for now :)
+void tasking_install(void) {
+	initialize_process_tree();
+	current_process = spawn_init();
+	kernel_idle_task = spawn_kidle();
+#if 0
+	set_process_environment((process_t *)current_process, current_directory);
+#endif
+	switch_page_directory(current_process->thread.page_directory);
+	frozen_stack = (uintptr_t)valloc(KERNEL_STACK_SIZE);
+}
+*/
 
 void gdt_set_gate(uint8_t num, uint64_t base, uint64_t limit, uint8_t access, uint8_t gran) {
 	/* Base Address */
@@ -32,9 +46,10 @@ void gdt_set_gate(uint8_t num, uint64_t base, uint64_t limit, uint8_t access, ui
 static void write_tss(int32_t num, uint16_t ss0, uint32_t esp0);
 
 void gdt_install(void) {
-  pstring("setting the gdt pointer", 1);
+  pstring("Setting the gdt pointer at: ", 0);
 	gdt_pointer_t *gdtp = &gdt.pointer;
-  pstring("setting base & limit", 1);
+  pint(&gdt.pointer, 1);
+  pstring("Setting base & limit", 1);
 	gdtp->limit = sizeof gdt.entries - 1;
 	gdtp->base = (uintptr_t)&ENTRY(0);
   pstring("Setting gates", 1);
@@ -45,11 +60,11 @@ void gdt_install(void) {
 	gdt_set_gate(4, 0, 0xFFFFFFFF, 0xF2, 0xCF); /* User data */
   pstring("Writing to tss", 1);
 	write_tss(5, 0x10, 0x0);
-  pstring("flushing gdt & tss", 1);
+  pstring("Flushing gdt & tss", 1);
 	/* Go go go */
 	gdt_flush((uintptr_t)gdtp);
 	tss_flush();
-  pstring("setup done", 1);
+  pstring("Setup done", 1);
 }
 
 static void write_tss(int32_t num, uint16_t ss0, uint32_t esp0) {
