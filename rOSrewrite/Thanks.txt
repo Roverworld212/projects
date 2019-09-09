@@ -15,3 +15,6 @@ for more code that is used in my OS
 
 https://software.intel.com/sites/default/files/managed/39/c5/325462-sdm-vol-1-2abcd-3abcd.pdf
 for more information about Intel cpus and assembly
+
+https://github.com/klange/toaruos
+for the GDT code and helping me understand how multitasking and PIDs should be handled
