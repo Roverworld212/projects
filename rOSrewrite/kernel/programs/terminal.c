@@ -63,7 +63,7 @@ void fcwargs(){//Set all nums in the cwargs array to 0
 }
 
 void ciarg(){//cinterp with args
-  pstring("CNUM:", 0);
+  pstring("CWARGS1:", 0);
   pint(cwargs[0], 0);
   pstring("   CWARGS2: ", 0);
   pint(cwargs[1], 1);
