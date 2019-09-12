@@ -2,7 +2,7 @@
 This is my custom operating system(mainly just a kernel for now)
 
 # What can it do?
-It can take user input and run commands(when terminal is added back)
+It can take user input and run commands
 
 # What is planned?
 
