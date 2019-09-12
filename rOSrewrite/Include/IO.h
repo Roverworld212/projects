@@ -1,9 +1,6 @@
 #ifndef IO_H
 #define IO_H
-
 #define KEYBOARD_PORT 0x60
-
-
 #define KEY_A 0x1E
 #define KEY_B 0x30
 #define KEY_C 0x2E
@@ -83,4 +80,7 @@
 #define KEY_TAB 0x0F
 #define KEY_UP 0x48
 #endif
+
+extern int retcnum();
+extern void rsetcn();
 typedef enum {false, true} bool;

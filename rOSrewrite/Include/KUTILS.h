@@ -8,3 +8,6 @@
 /* /kernel/kutils.c */
 extern void *memset(void *dest, char val, size_t count);
 extern unsigned short * memsetw(unsigned short * dest, unsigned short val, int count);
+
+/* /kernel/setup.c */
+extern void setup();

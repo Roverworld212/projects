@@ -147,11 +147,19 @@ void ccn(int nta){//Count cmdnum
 	sleep(0x02FFFFFF);
 }
 
+int retcnum(){
+	return cmdnum;
+}
+
 void sleepk(){
 	sleep(0x02FFFFFF);
 	sleep(0x02FFFFFF);
 	sleep(0x02FFFFFF);
 	sleep(0x02FFFFFF);
+}
+
+void rsetcn(){
+	cmdnum= 0;
 }
 
 uint8 inb(uint16 port)
@@ -190,18 +198,4 @@ void wait_for_io(uint32 timer_count)
 		if (timer_count <= 0)
 			break;
 	}
-}
-
-void sleept() {//Yes you are seeing this correctly
-	//idk how sleep() works but spamming it stops key duplication so...
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
-	sleep(0x02FFFFFF);
 }

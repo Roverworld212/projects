@@ -1,3 +1,5 @@
+#pragma once
+
 #define VGA_ADDRESS 0xB8000
 #define BUFSIZE 2200
 
@@ -7,6 +9,7 @@
 extern void init_vga(uint8 fore_color, uint8 back_color);
 extern void pstring(char *str,int nl);
 extern void pline();
+extern void cls();
 extern void pint(int num,int nl);
 
 enum vga_color {

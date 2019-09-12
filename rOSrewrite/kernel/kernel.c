@@ -1,9 +1,8 @@
 #include "PANIC.h"
-extern void setup();
+#include "KUTILS.h"
 
 void kernel_main() {
 	setup();//Lets setup the kernel
-	while(1 == 1){
-		kpanic();
-	}
+	tmain();
+	kpanic();//Panic when terminal returns (That should not happen)
 }
