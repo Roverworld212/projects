@@ -105,7 +105,7 @@ void ciarg(){//cinterp with args
     case 320://DVARS
     break;
     case 205://HELP
-    pstring("Commands: KPANIC CLS DVARS HELP DREGS USG", 1);
+    pstring("Commands: KPANIC CLS DVARS HELP DREGS USG SYSINF", 1);
     break;
     case 170://CLS
     cls();
