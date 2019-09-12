@@ -87,7 +87,7 @@ void ciarg(){//cinterp with args
     case 320://DVARS
     break;
     case 205://HELP
-    pstring("Commands: KPANIC CLS DVARS HELP", 1);
+    pstring("Commands: KPANIC CLS DVARS HELP DREGS", 1);
     break;
     default://DEFAULT
     pstring("Invalid cmd", 1);
