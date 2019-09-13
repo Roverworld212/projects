@@ -82,5 +82,7 @@
 #endif
 
 extern int retcnum();
+extern void fixindex();
+extern void rccn(int ntr);
 extern void rsetcn();
-typedef enum {false, true} bool;
+extern void sbkswp();

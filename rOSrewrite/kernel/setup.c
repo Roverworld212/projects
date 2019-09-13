@@ -2,10 +2,18 @@
 #include "TYPES.h"
 #include "GDT.h"
 #include "UIDEV.h"
+#include "KERNEL.h"
 
 void setup(){//Setup all important funcs at boot
-  init_vga(WHITE, BLUE);
+  if(bargs.VGAENABLE == 1){
+    init_vga(WHITE, BLUE);
+  }
+  if(bargs.GDTENABLE == 1){
   gdt_install();
+  }
+  else{
+    pstring("bargs.GDTENABLE != 1, Skipping GDT installation", 1);
+  }
   pstring("Starting up multitasking", 1);
 }
 
@@ -17,7 +25,7 @@ void stp(){
 }
 
 /*Just for now :)
-void tasking_install(void) {
+void tasking_install(void) {//By Klange
 	initialize_process_tree();
 	current_process = spawn_init();
 	kernel_idle_task = spawn_kidle();

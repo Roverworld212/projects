@@ -1,4 +1,6 @@
 #include "IO.h"
+#include "bool.h"
+#include "UIDEV.h"
 #include "TYPES.h"
 int kpressed = 0;
 int cmdnum = 0;
@@ -114,15 +116,25 @@ char gac(uint8 key_code)
 		sleepk();
 		return 'Z';
 	case KEY_1: return '1';
+	ccn(1);
 	case KEY_2: return '2';
+	ccn(2);
 	case KEY_3: return '3';
+	ccn(3);
 	case KEY_4: return '4';
+	ccn(4);
 	case KEY_5: return '5';
+	ccn(5);
 	case KEY_6: return '6';
+	ccn(6);
 	case KEY_7: return '7';
+	ccn(7);
 	case KEY_8: return '8';
+	ccn(8);
 	case KEY_9: return '9';
+	ccn(9);
 	case KEY_0: return '0';
+	ccn(115);
 	case KEY_MINUS: return '-';
 	case KEY_EQUAL: return '=';
 	case KEY_SQUARE_OPEN_BRACKET: return '[';
@@ -138,13 +150,16 @@ char gac(uint8 key_code)
 }
 
 void ccn(int nta){//Count cmdnum
+	charpindx++;
+	charp[charpindx] = nta;
 	cmdnum = cmdnum + nta;
-	/*Debug Commands
-	//pstring("(", 0);
-	//pint(nta, 0);
-	//pstring(")", 0);
-	*/
 	sleep(0x02FFFFFF);
+}
+
+void rccn(int ntr){//Remove a number from cmdnum
+	cmdnum = cmdnum - ntr;
+	sleep(0x02FFFFFF);
+	charpindx--;
 }
 
 int retcnum(){

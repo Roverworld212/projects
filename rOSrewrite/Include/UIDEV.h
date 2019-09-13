@@ -11,6 +11,10 @@ extern void pstring(char *str,int nl);
 extern void pline();
 extern void cls();
 extern void pint(int num,int nl);
+extern void backspace();
+
+extern int charp[99];//Up to 100 backspaces
+extern int charpindx;
 
 enum vga_color {
 	BLACK,

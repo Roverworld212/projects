@@ -1,14 +1,19 @@
 #include "UIDEV.h"
 #include "IO.h"
 #include "TYPES.h"
+#include "bool.h"
 
-uint32 vga_index;
 static uint32 next_line_index = 1;
+uint32 vga_index;
+uint16* vga_buffer;
 uint8 g_fore_color = WHITE, g_back_color = BLUE;//Change this for different colors
 int digit_ascii_codes[10] = { 0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39 };
-uint16* vga_buffer;
 int csrx = 0;
 int csry = 0;
+uint16* lindxnum;
+bool bkswp = false;
+int charp[99];//Up to 100 backspaces
+int charpindx = -1;
 
 uint16 vga_entry(unsigned char ch, uint8 fore_color, uint8 back_color){
 	uint16 ax = 0;
@@ -64,6 +69,22 @@ void pline(){
 
 void pchar(char ch){
 	vga_buffer[vga_index] = vga_entry(ch, g_fore_color, g_back_color);
+	vga_index++;
+}
+
+void bckspcf(){//Sets all backspaces in charp[] to 0
+	int i = 0;
+	while(charp[i]){
+		charp[i] = 0;
+		i++;
+	}
+	charpindx = -1;
+}
+
+void backspace(){//Backspace support! Yay! Oh wait, It's broken :(
+	vga_index--;
+	pchar(" ");
+	rccn(charp[charpindx]);
 	vga_index++;
 }
 
